@@ -4,7 +4,7 @@ export default function Home() {
       {/* Header */}
       <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <img src="/logo.png" alt="Qorgau SOS Bracelet" style={{ width: 44, height: 44, borderRadius: 10 }} />
+          <img src="/logo.png" alt="Qorgau SOS Bracelet" style={{ width: 72, height: 72, borderRadius: 16, objectFit: "cover" }} />
           <div>
             <div style={{ fontWeight: 800, fontSize: 18 }}>QORGAU SOS Bracelet</div>
             <div style={{ opacity: 0.7, fontSize: 13 }}>Safety • Travel • Peace of mind</div>
