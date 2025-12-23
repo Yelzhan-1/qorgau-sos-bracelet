@@ -12,7 +12,7 @@ export default function Home() {
         </div>
 
         <div style={{ display: "flex", gap: 10 }}>
-          <a href="#demo" style={btnStyle}>Demo</a>
+          <a href="#demo" style={btnStyle}>Video-Demo</a>
           <a href="#contact" style={btnStyleOutline}>Contact</a>
         </div>
       </header>
