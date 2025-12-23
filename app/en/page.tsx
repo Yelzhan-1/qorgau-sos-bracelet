@@ -147,3 +147,22 @@ const btnStyleOutline: React.CSSProperties = {
   color: "#111",
   border: "1px solid #ddd",
 };
+
+const langBtn: React.CSSProperties = {
+  display: "inline-block",
+  padding: "8px 10px",
+  borderRadius: 10,
+  border: "1px solid #ddd",
+  textDecoration: "none",
+  color: "#111",
+  fontWeight: 800,
+  fontSize: 13,
+};
+
+const langActive: React.CSSProperties = {
+  ...langBtn,
+  background: "#111",
+  color: "#fff",
+  border: "1px solid #111",
+};
+
