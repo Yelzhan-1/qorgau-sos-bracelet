@@ -24,7 +24,8 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section style={{ marginTop: 28, padding: 20, border: "1px solid #eee", borderRadius: 16 }}>
+      <section style={{ marginTop: 28, padding: 20, border: `1px solid ${COLORS.border}`
+, borderRadius: 16 }}>
         <h1 style={{ margin: 0, fontSize: 34, lineHeight: 1.1 }}>
           SOS Bracelet — помощь в один клик
         </h1>
@@ -85,7 +86,8 @@ export default function Home() {
       {/* Demo video */}
       <section id="demo" style={{ marginTop: 22 }}>
         <h2 style={h2}>Видео-демо</h2>
-        <div style={{ border: "1px solid #eee", borderRadius: 16, padding: 12 }}>
+        <div style={{ border: `1px solid ${COLORS.border}`
+, borderRadius: 16, padding: 12 }}>
           {/* Если нет demo.mp4 — залей или замени на YouTube iframe */}
           <video controls playsInline style={{ width: "100%", borderRadius: 12 }}>
             <source src="/demo.mp4" type="video/mp4" />
@@ -140,33 +142,46 @@ const btnStyle: React.CSSProperties = {
   display: "inline-block",
   padding: "10px 14px",
   borderRadius: 12,
-  background: "#111",
-  color: "#fff",
+  background: COLORS.mint,
+  color: COLORS.text,
   textDecoration: "none",
-  fontWeight: 700,
+  fontWeight: 800,
 };
+
 
 const btnStyleOutline: React.CSSProperties = {
   ...btnStyle,
   background: "transparent",
-  color: "#111",
-  border: "1px solid #ddd",
+  color: COLORS.text,
+  border: `1px solid ${COLORS.border}`,
 };
+
 
 const langBtn: React.CSSProperties = {
   display: "inline-block",
   padding: "8px 10px",
   borderRadius: 10,
-  border: "1px solid #ddd",
+  border: `1px solid ${COLORS.border}`,
   textDecoration: "none",
-  color: "#111",
+  color: COLORS.text,
   fontWeight: 800,
   fontSize: 13,
+  background: "transparent",
 };
 
 const langActive: React.CSSProperties = {
   ...langBtn,
-  background: "#111",
-  color: "#fff",
-  border: "1px solid #111",
+  background: COLORS.mint,
+  color: COLORS.text,
+  border: `1px solid ${COLORS.mint}`,
+};
+
+
+const COLORS = {
+  text: "#0F172A",
+  border: "#E5E7EB",
+  mint: "#2DD4BF",
+  mintDark: "#14B8A6",
+  bg: "#FFFFFF",
+  softMint: "#ECFEFF",
 };
