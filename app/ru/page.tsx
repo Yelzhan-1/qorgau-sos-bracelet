@@ -122,7 +122,14 @@ export default function Home() {
     </main>
   );
 }
-
+const COLORS = {
+  text: "#0F172A",
+  border: "#E5E7EB",
+  mint: "#2DD4BF",
+  mintDark: "#14B8A6",
+  bg: "#FFFFFF",
+  softMint: "#ECFEFF",
+};
 const h2: React.CSSProperties = { margin: "0 0 10px", fontSize: 22 };
 const p: React.CSSProperties = { margin: 0, fontSize: 16, opacity: 0.85, maxWidth: 900 };
 
@@ -176,12 +183,3 @@ const langActive: React.CSSProperties = {
   border: `1px solid ${COLORS.mint}`,
 };
 
-
-const COLORS = {
-  text: "#0F172A",
-  border: "#E5E7EB",
-  mint: "#2DD4BF",
-  mintDark: "#14B8A6",
-  bg: "#FFFFFF",
-  softMint: "#ECFEFF",
-};
