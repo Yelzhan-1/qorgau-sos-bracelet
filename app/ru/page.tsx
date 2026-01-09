@@ -1,19 +1,15 @@
 export default function Home() {
   return (
-  <main
+ <main
   style={{
     fontFamily: "system-ui",
     padding: 24,
     maxWidth: 1100,
     margin: "0 auto",
     minHeight: "100vh",
-    background: `
-      radial-gradient(900px 500px at 10% 5%, rgba(45,212,191,0.22) 0%, rgba(255,255,255,0) 60%),
-      radial-gradient(900px 500px at 90% 0%, rgba(99,102,241,0.14) 0%, rgba(255,255,255,0) 55%),
-      linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 45%, #F8FAFC 100%)
-    `,
   }}
 >
+
 
 
       {/* Header */}
