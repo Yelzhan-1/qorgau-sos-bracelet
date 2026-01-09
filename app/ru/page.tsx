@@ -1,8 +1,32 @@
 export default function Home() {
   return (
-    <main style={{ fontFamily: "system-ui", padding: 24, maxWidth: 1100, margin: "0 auto" }}>
+   <main
+  style={{
+    fontFamily: "system-ui",
+    padding: 24,
+    maxWidth: 1100,
+    margin: "0 auto",
+    background: `radial-gradient(1200px 600px at 10% 0%, ${COLORS.softMint} 0%, ${COLORS.bg} 55%)`,
+  }}
+>
+
       {/* Header */}
-      <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
+      <header
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 16,
+    position: "sticky",
+    top: 0,
+    zIndex: 10,
+    padding: "14px 0",
+    background: "rgba(255,255,255,0.75)",
+    backdropFilter: "blur(10px)",
+    borderBottom: `1px solid ${COLORS.border}`,
+  }}
+>
+
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <img src="/logo.png" alt="Qorgau SOS Bracelet" style={{ width: 144, height: 144, borderRadius: 16, objectFit: "cover" }} />
           <div>
@@ -24,27 +48,39 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section style={{ marginTop: 28, padding: 20, border: `1px solid ${COLORS.border}`
-, borderRadius: 16 }}>
-        <h1 style={{ margin: 0, fontSize: 34, lineHeight: 1.1 }}>
-          SOS Bracelet — помощь в один клик
-        </h1>
-        <p style={{ marginTop: 12, fontSize: 16, opacity: 0.85, maxWidth: 800 }}>
-          Мы создаём браслет для безопасности детей и девушек, которые могут столкнуться с опасностью и насилием.
-          Нажатие кнопки отправляет сигнал на привязанный телефон, а вибрация помогает заметить случайное нажатие
-          и отменить ложный вызов.
-        </p>
+      <section
+  style={{
+    marginTop: 28,
+    padding: 22,
+    borderRadius: 18,
+    border: `1px solid ${COLORS.border}`,
+    background: `linear-gradient(180deg, ${COLORS.softMint} 0%, #ffffff 60%)`,
+    boxShadow: "0 12px 30px rgba(2, 6, 23, 0.06)",
+  }}
+>
+  <div style={badge}>New • Safety + Travel</div>
 
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 14 }}>
-          <a href="#mission" style={btnStyle}>Наша миссия</a>
-          <a href="#tourism" style={btnStyleOutline}>Safe tourism</a>
-          <a href="#gallery" style={btnStyleOutline}>Фото браслета</a>
-        </div>
+  <h1 style={{ margin: "10px 0 0", fontSize: 38, lineHeight: 1.1, letterSpacing: -0.6 }}>
+    SOS Bracelet — помощь в один клик
+  </h1>
 
-        <p style={{ marginTop: 14, fontSize: 12, opacity: 0.7 }}>
-          Проект в разработке. Не заменяет экстренные службы. В случае угрозы жизни — 112.
-        </p>
-      </section>
+  <p style={{ marginTop: 12, fontSize: 16.5, opacity: 0.9, maxWidth: 820, lineHeight: 1.55 }}>
+    Мы создаём браслет для безопасности детей и девушек, которые могут столкнуться с опасностью и насилием.
+    Нажатие кнопки отправляет сигнал на привязанный телефон, а вибрация помогает заметить случайное нажатие
+    и отменить ложный вызов.
+  </p>
+
+  <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 14 }}>
+    <a href="#mission" style={btnStyle}>Наша миссия</a>
+    <a href="#tourism" style={btnStyleOutline}>Safe tourism</a>
+    <a href="#gallery" style={btnStyleOutline}>Фото браслета</a>
+  </div>
+
+  <p style={{ marginTop: 14, fontSize: 12.5, opacity: 0.7 }}>
+    Проект в разработке. Не заменяет экстренные службы. В случае угрозы жизни — 112.
+  </p>
+</section>
+
 
       {/* Mission */}
       <section id="mission" style={{ marginTop: 26 }}>
@@ -140,28 +176,35 @@ const grid: React.CSSProperties = {
 };
 
 const card: React.CSSProperties = {
-  border: "1px solid #eee",
-  borderRadius: 16,
-  padding: 14,
+  border: `1px solid ${COLORS.border}`,
+  borderRadius: 18,
+  padding: 16,
+  background: "#fff",
+  boxShadow: "0 10px 22px rgba(2, 6, 23, 0.05)",
 };
+
 
 const btnStyle: React.CSSProperties = {
   display: "inline-block",
   padding: "10px 14px",
-  borderRadius: 12,
-  background: COLORS.mint,
-  color: COLORS.text,
+  borderRadius: 14,
+  background: `linear-gradient(135deg, ${COLORS.mint} 0%, ${COLORS.mintDark} 100%)`,
+  color: "#052F2B",
   textDecoration: "none",
-  fontWeight: 800,
+  fontWeight: 900,
+  boxShadow: "0 10px 18px rgba(20, 184, 166, 0.25)",
 };
+
 
 
 const btnStyleOutline: React.CSSProperties = {
   ...btnStyle,
-  background: "transparent",
+  background: "rgba(255,255,255,0.7)",
   color: COLORS.text,
   border: `1px solid ${COLORS.border}`,
+  boxShadow: "none",
 };
+
 
 
 const langBtn: React.CSSProperties = {
@@ -182,4 +225,16 @@ const langActive: React.CSSProperties = {
   color: COLORS.text,
   border: `1px solid ${COLORS.mint}`,
 };
+
+const badge: React.CSSProperties = {
+  display: "inline-block",
+  padding: "6px 10px",
+  borderRadius: 999,
+  background: "rgba(45, 212, 191, 0.16)",
+  border: "1px solid rgba(45, 212, 191, 0.35)",
+  color: "#0B3B35",
+  fontWeight: 800,
+  fontSize: 12,
+};
+
 
