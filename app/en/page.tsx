@@ -101,19 +101,17 @@ export default function Home() {
         </section>
 
         {/* Demo video */}
-        <section id="demo" style={S.sectionCard}>
-          <h2 style={S.h2}>Demo video</h2>
-
-          <div style={S.videoBox}>
-            <video controls playsInline style={S.video}>
-              <source src="/demo.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <p style={S.note}>
-            If you don’t have the video yet — upload <b>demo.mp4</b> to the <b>public</b> folder or replace it with a YouTube iframe.
-          </p>
-        </section>
+         <section id="demo" style={{ marginTop: 22 }}>
+        <h2 style={h2}>Video demo</h2>
+        <div style={{ border: `1px solid ${COLORS.border}`, borderRadius: 16, padding: 12 }}>
+          <video controls playsInline preload="metadata" style={{ width: "100%", borderRadius: 12 }}>
+            <source src="/demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p style={{ fontSize: 12, opacity: 0.7 }}>
+          If the video doesn’t show: make sure demo.mp4 is in /public and encoded as H.264 (mp4).
+        </p>
+      </section>
 
         {/* Gallery */}
         <section id="gallery" style={S.sectionCard}>
