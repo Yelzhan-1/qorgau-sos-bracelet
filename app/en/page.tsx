@@ -413,4 +413,108 @@ const S: Record<string, CSSProperties> = {
     marginTop: 10,
     borderRadius: 18,
     padding: 12,
-    background:
+    background: "rgba(255,255,255,0.82)",
+    border: `1px solid rgba(15,23,42,0.10)`,
+  },
+
+  video: { width: "100%", borderRadius: 14 },
+
+  note: { marginTop: 10, fontSize: 12.5, color: COLORS.muted },
+
+  link: { color: COLORS.text, fontWeight: 800, textDecoration: "underline" },
+
+  modelsGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+    gap: 14,
+    marginTop: 12,
+  },
+
+  modelCard: {
+    borderRadius: 20,
+    padding: 16,
+    background: "rgba(255,255,255,0.82)",
+    border: `1px solid rgba(15,23,42,0.10)`,
+    boxShadow: "0 10px 22px rgba(2, 6, 23, 0.06)",
+    display: "flex",
+    flexDirection: "column",
+    gap: 12,
+  },
+
+  modelTop: {
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    gap: 12,
+  },
+
+  modelTitle: { fontWeight: 950, fontSize: 18, color: COLORS.text },
+  modelSubtitle: { marginTop: 4, fontSize: 13, color: COLORS.muted, fontWeight: 700 },
+
+  pricePill: {
+    padding: "8px 10px",
+    borderRadius: 999,
+    fontWeight: 950,
+    fontSize: 13,
+    color: "#052F2B",
+    background: `linear-gradient(135deg, ${COLORS.mint} 0%, ${COLORS.mintDark} 100%)`,
+    border: "1px solid rgba(45, 212, 191, 0.35)",
+    boxShadow: "0 10px 18px rgba(45, 212, 191, 0.20)",
+    whiteSpace: "nowrap",
+  },
+
+  modelImageWrap: {
+    borderRadius: 18,
+    border: `1px solid rgba(15,23,42,0.10)`,
+    background: "rgba(255,255,255,0.9)",
+    padding: 10,
+  },
+
+  modelImage: {
+    width: "100%",
+    height: 220,
+    objectFit: "contain",
+    display: "block",
+    borderRadius: 14,
+  },
+
+  modelSpec: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+  },
+
+  specRow: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
+  },
+
+  specLabel: {
+    fontSize: 13,
+    fontWeight: 900,
+    color: COLORS.text,
+  },
+
+  specText: {
+    fontSize: 14,
+    fontWeight: 800,
+    color: "rgba(15, 23, 42, 0.82)",
+  },
+
+  chips: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 8,
+  },
+
+  chip: {
+    padding: "7px 10px",
+    borderRadius: 999,
+    fontSize: 12.5,
+    fontWeight: 850,
+    color: "rgba(15, 23, 42, 0.82)",
+    border: `1px solid rgba(15, 23, 42, 0.12)`,
+    background: "rgba(255,255,255,0.65)",
+  },
+};
