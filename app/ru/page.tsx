@@ -52,8 +52,8 @@ export default function Home() {
             <a href="#tourism" style={S.btnGhost}>
               Safe tourism
             </a>
-            <a href="#gallery" style={S.btnGhost}>
-              Фото браслета
+            <a href="#models" style={S.btnGhost}>
+              Модели браслета
             </a>
           </div>
 
@@ -105,30 +105,97 @@ export default function Home() {
           <h2 style={S.h2}>Видео-демо</h2>
 
           <div style={S.videoBox}>
-            <video controls playsInline style={S.video}>
+            <video controls playsInline preload="metadata" style={S.video}>
               <source src="/demo.mp4" type="video/mp4" />
             </video>
           </div>
 
           <p style={S.note}>
-            Если видео нет — загрузи файл <b>demo.mp4</b> в папку <b>public</b> или замени на YouTube iframe.
+            Если видео не показывает — проверь, что <b>demo.mp4</b> лежит в <b>/public</b> и сохранён как H.264 (mp4).
           </p>
         </section>
 
-        {/* Gallery */}
-        <section id="gallery" style={S.sectionCard}>
-          <h2 style={S.h2}>Галерея</h2>
+        {/* Models (NEW instead of Gallery) */}
+        <section id="models" style={S.sectionCard}>
+          <h2 style={S.h2}>Модели браслета</h2>
 
-          <div style={S.grid}>
-            {["/bracelet/1.png", "/bracelet/2.png", "/bracelet/3.png"].map((src) => (
-              <div key={src} style={S.imageCard}>
-                <img src={src} alt="Bracelet" style={S.image} />
+          <div style={S.modelsGrid}>
+            {/* Budget */}
+            <div style={S.modelCard}>
+              <div style={S.modelTop}>
+                <div>
+                  <div style={S.modelTitle}>Бюджетный</div>
+                  <div style={S.modelSubtitle}>Базовая безопасность</div>
+                </div>
+                <div style={S.pricePill}>25 000 ₸</div>
               </div>
-            ))}
+
+              <div style={S.modelImageWrap}>
+                <img src="/bracelet/2.png" alt="Бюджетный браслет" style={S.modelImage} />
+              </div>
+
+              <div style={S.modelSpec}>
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Функции</div>
+                  <div style={S.chips}>
+                    {["SOS", "GPS", "Звонки"].map((t) => (
+                      <span key={t} style={S.chip}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Материал</div>
+                  <div style={S.specText}>Корпус из силикона</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Premium */}
+            <div style={S.modelCard}>
+              <div style={S.modelTop}>
+                <div>
+                  <div style={S.modelTitle}>Премиум</div>
+                  <div style={S.modelSubtitle}>Максимальная защита + функции</div>
+                </div>
+                <div style={S.pricePill}>42 000 ₸</div>
+              </div>
+
+              <div style={S.modelImageWrap}>
+                <img src="/bracelet/1.png" alt="Премиум браслет" style={S.modelImage} />
+              </div>
+
+              <div style={S.modelSpec}>
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Функции</div>
+                  <div style={S.chips}>
+                    {[
+                      "Всё из Бюджетного",
+                      "Мониторинг здоровья",
+                      "Геозоны",
+                      "История маршрутов",
+                      "Автономная работа",
+                    ].map((t) => (
+                      <span key={t} style={S.chip}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Материал</div>
+                  <div style={S.specText}>Корпус из металла</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <p style={S.note}>
-            Фото должны лежать тут: <b>public/bracelet/1.png</b>, <b>2.png</b>, <b>3.png</b>
+            Фото моделей должны лежать в <b>public/bracelet/1.png</b> и <b>public/bracelet/2.png</b> (если хочешь —
+            можешь поменять местами).
           </p>
         </section>
 
@@ -352,17 +419,103 @@ const S: Record<string, CSSProperties> = {
 
   video: { width: "100%", borderRadius: 14 },
 
-  imageCard: {
-    borderRadius: 18,
-    padding: 10,
-    background: "rgba(255,255,255,0.82)",
-    border: `1px solid rgba(15,23,42,0.10)`,
-    boxShadow: "0 10px 22px rgba(2, 6, 23, 0.06)",
-  },
-
-  image: { width: "100%", borderRadius: 14, display: "block" },
-
   note: { marginTop: 10, fontSize: 12.5, color: COLORS.muted },
 
   link: { color: COLORS.text, fontWeight: 800, textDecoration: "underline" },
+
+  /* ===== NEW: Models styles ===== */
+  modelsGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+    gap: 14,
+    marginTop: 12,
+  },
+
+  modelCard: {
+    borderRadius: 20,
+    padding: 16,
+    background: "rgba(255,255,255,0.82)",
+    border: `1px solid rgba(15,23,42,0.10)`,
+    boxShadow: "0 10px 22px rgba(2, 6, 23, 0.06)",
+    display: "flex",
+    flexDirection: "column",
+    gap: 12,
+  },
+
+  modelTop: {
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    gap: 12,
+  },
+
+  modelTitle: { fontWeight: 950, fontSize: 18, color: COLORS.text },
+  modelSubtitle: { marginTop: 4, fontSize: 13, color: COLORS.muted, fontWeight: 700 },
+
+  pricePill: {
+    padding: "8px 10px",
+    borderRadius: 999,
+    fontWeight: 950,
+    fontSize: 13,
+    color: "#052F2B",
+    background: `linear-gradient(135deg, ${COLORS.mint} 0%, ${COLORS.mintDark} 100%)`,
+    border: "1px solid rgba(45, 212, 191, 0.35)",
+    boxShadow: "0 10px 18px rgba(45, 212, 191, 0.20)",
+    whiteSpace: "nowrap",
+  },
+
+  modelImageWrap: {
+    borderRadius: 18,
+    border: `1px solid rgba(15,23,42,0.10)`,
+    background: "rgba(255,255,255,0.9)",
+    padding: 10,
+  },
+
+  modelImage: {
+    width: "100%",
+    height: 220,
+    objectFit: "contain",
+    display: "block",
+    borderRadius: 14,
+  },
+
+  modelSpec: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+  },
+
+  specRow: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
+  },
+
+  specLabel: {
+    fontSize: 13,
+    fontWeight: 900,
+    color: COLORS.text,
+  },
+
+  specText: {
+    fontSize: 14,
+    fontWeight: 800,
+    color: "rgba(15, 23, 42, 0.82)",
+  },
+
+  chips: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 8,
+  },
+
+  chip: {
+    padding: "7px 10px",
+    borderRadius: 999,
+    fontSize: 12.5,
+    fontWeight: 850,
+    color: "rgba(15, 23, 42, 0.82)",
+    border: `1px solid rgba(15, 23, 42, 0.12)`,
+    background: "rgba(255,255,255,0.65)",
+  },
 };
