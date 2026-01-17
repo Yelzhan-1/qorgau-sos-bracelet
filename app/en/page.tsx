@@ -52,8 +52,8 @@ export default function Home() {
             <a href="#tourism" style={S.btnGhost}>
               Safe tourism
             </a>
-            <a href="#gallery" style={S.btnGhost}>
-              Bracelet photos
+            <a href="#models" style={S.btnGhost}>
+              Bracelet models
             </a>
           </div>
 
@@ -101,35 +101,100 @@ export default function Home() {
         </section>
 
         {/* Demo video */}
-<section id="demo" style={S.sectionCard}>
-  <h2 style={S.h2}>Video demo</h2>
+        <section id="demo" style={S.sectionCard}>
+          <h2 style={S.h2}>Demo video</h2>
 
-  <div style={S.videoBox}>
-    <video controls playsInline preload="metadata" style={S.video}>
-      <source src="/demo.mp4" type="video/mp4" />
-    </video>
-  </div>
-
-  <p style={S.note}>
-    If the video doesn’t show: make sure <b>demo.mp4</b> is in <b>/public</b> and encoded as H.264 (mp4).
-  </p>
-</section>
-
-
-        {/* Gallery */}
-        <section id="gallery" style={S.sectionCard}>
-          <h2 style={S.h2}>Gallery</h2>
-
-          <div style={S.grid}>
-            {["/bracelet/1.png", "/bracelet/2.png", "/bracelet/3.png"].map((src) => (
-              <div key={src} style={S.imageCard}>
-                <img src={src} alt="Bracelet" style={S.image} />
-              </div>
-            ))}
+          <div style={S.videoBox}>
+            <video controls playsInline preload="metadata" style={S.video}>
+              <source src="/demo.mp4" type="video/mp4" />
+            </video>
           </div>
 
           <p style={S.note}>
-            Photos should be here: <b>public/bracelet/1.png</b>, <b>2.png</b>, <b>3.png</b>
+            If the video doesn’t show — make sure <b>demo.mp4</b> is inside <b>/public</b> and encoded as H.264 (mp4).
+          </p>
+        </section>
+
+        {/* Models */}
+        <section id="models" style={S.sectionCard}>
+          <h2 style={S.h2}>Bracelet models</h2>
+
+          <div style={S.modelsGrid}>
+            {/* Budget */}
+            <div style={S.modelCard}>
+              <div style={S.modelTop}>
+                <div>
+                  <div style={S.modelTitle}>Budget</div>
+                  <div style={S.modelSubtitle}>Basic safety</div>
+                </div>
+                <div style={S.pricePill}>25 000 ₸</div>
+              </div>
+
+              <div style={S.modelImageWrap}>
+                <img src="/bracelet/2.png" alt="Budget bracelet" style={S.modelImage} />
+              </div>
+
+              <div style={S.modelSpec}>
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Features</div>
+                  <div style={S.chips}>
+                    {["SOS", "GPS", "Calls"].map((t) => (
+                      <span key={t} style={S.chip}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Material</div>
+                  <div style={S.specText}>Silicone body</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Premium */}
+            <div style={S.modelCard}>
+              <div style={S.modelTop}>
+                <div>
+                  <div style={S.modelTitle}>Premium</div>
+                  <div style={S.modelSubtitle}>Maximum protection + advanced features</div>
+                </div>
+                <div style={S.pricePill}>42 000 ₸</div>
+              </div>
+
+              <div style={S.modelImageWrap}>
+                <img src="/bracelet/1.png" alt="Premium bracelet" style={S.modelImage} />
+              </div>
+
+              <div style={S.modelSpec}>
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Features</div>
+                  <div style={S.chips}>
+                    {[
+                      "Everything from Budget",
+                      "Health monitoring",
+                      "Geofences",
+                      "Route history",
+                      "Autonomous mode",
+                    ].map((t) => (
+                      <span key={t} style={S.chip}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={S.specRow}>
+                  <div style={S.specLabel}>Material</div>
+                  <div style={S.specText}>Metal body</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p style={S.note}>
+            Model images should be in <b>public/bracelet/1.png</b> and <b>public/bracelet/2.png</b>.
           </p>
         </section>
 
@@ -149,6 +214,7 @@ export default function Home() {
   );
 }
 
+/* Same styles as RU */
 const COLORS = {
   text: "#0F172A",
   muted: "rgba(15, 23, 42, 0.70)",
@@ -347,23 +413,4 @@ const S: Record<string, CSSProperties> = {
     marginTop: 10,
     borderRadius: 18,
     padding: 12,
-    background: "rgba(255,255,255,0.82)",
-    border: `1px solid rgba(15,23,42,0.10)`,
-  },
-
-  video: { width: "100%", borderRadius: 14 },
-
-  imageCard: {
-    borderRadius: 18,
-    padding: 10,
-    background: "rgba(255,255,255,0.82)",
-    border: `1px solid rgba(15,23,42,0.10)`,
-    boxShadow: "0 10px 22px rgba(2, 6, 23, 0.06)",
-  },
-
-  image: { width: "100%", borderRadius: 14, display: "block" },
-
-  note: { marginTop: 10, fontSize: 12.5, color: COLORS.muted },
-
-  link: { color: COLORS.text, fontWeight: 800, textDecoration: "underline" },
-};
+    background:
